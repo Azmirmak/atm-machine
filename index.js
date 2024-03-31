@@ -2,6 +2,7 @@
 import inquirer from "inquirer";
 let userBalance = 25000;
 let userPin = 4477;
+console.log(`Pin for this account = ${userPin}`);
 let pinRequired = await inquirer.prompt([
     {
         name: "pin",
@@ -34,7 +35,7 @@ if (pinRequired.pin === userPin) {
                     name: "currency",
                     message: "Select the currency",
                     type: "checkbox",
-                    choices: ["500", "1000", "5000"],
+                    choices: ["100", "500", "1000", "5000"],
                 }
             ]);
             console.log("You withdrew: $", cash.reqcash);
